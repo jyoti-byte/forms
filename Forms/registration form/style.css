@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #42f590, #c663f7);
+    padding: 10px;
+}
+.container {
+    max-width: 700px;
+    width: 100%;
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 10px;
+}
+.container .title {
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+}
+.container .title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    height: 3px;
+    width:35px;
+    background: linear-gradient(135deg, #42f590, #c663f7);
+}
+.container form .user-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 10px 0;
+}
+.container .user-details .inputbox {
+    margin-bottom: 20px;
+    width: calc(100% /2 - 20px)
+}
+.user-details .inputbox .details {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+.user-details .inputbox input {
+    height: 40px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left:20px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+.user-details .inputbox input:focus, 
+.user-details .inputbox input:valid {
+    border-color: #c663f7;
+}
+form .gender-details .gender-title {
+    font-size: 20px;
+    font-weight: 550;
+}
+form .gender-details .category {
+    display: flex;
+    width: 30vw;
+    margin: 10px 0;
+    justify-content: space-between;
+}
+.gender-details .category label {
+    display: flex;
+    align-items: center;
+}
+.gender-details .category .dot {
+    height: 18px;
+    width: 18px;
+    background: #d9d9d9;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 5px solid transparent;
+    transition: all 0.3s ease;
+}
+#dot-1:checked ~ .category label .one,
+#dot-2:checked ~ .category label .two,
+#dot-3:checked ~ .category label .three {
+    border-color: #d9d9d9;
+    background: #c663f7;
+}
+input[type="radio"] {
+    display: none;
+}
+form .button {
+    height: 45px;
+    margin: 45px 0;
+}
+form .button input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 5px;
+    background: linear-gradient(135deg, #42f590, #c663f7);
+}
+form .button input:hover {
+    background: linear-gradient(-135deg, #42f590, #c663f7);
+}
+@media screen and (max-width:584px) {
+    .container {
+        max-width: 100%;
+    }
+    form .user-details .inputbox {
+        margin-bottom: 20px;
+        width: 100%;
+    }
+    form .gender-details .category {
+        width: 100%;
+    }
+    .container form .user-details {
+        max-height: 300px;
+        overflow-y: scroll;
+    }
+    .user-details::-webkit-scrollbar {
+        width: 0;
+    }
+}
